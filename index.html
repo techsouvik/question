@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-image: radial-gradient(rgb(216, 4, 4) 25%,rgb(192, 95, 4),rgb(236, 236, 4));
+            background-repeat: no-repeat;
+            height:1000px;
+            width: 500px;
+        }
+        .i1{
+            color:rgb(0, 0, 0);
+        }
+       
+        #clock{
+            font-size: 45px; 
+            width: 300px; 
+           /* background-image: linear-gradient(rgb(9, 2, 68),white );*/
+            text-align: center; 
+            border: 2px solid black; 
+            border-radius: 20px;
+            
+           position: absolute;
+            left:1000px;
+            top:50px;
+        } 
+        .a{
+            font-size: 30px;
+            
+             
+            border-radius: 20px;
+            width:500px;
+
+            position:relative;
+            
+            top:120px;
+        }
+    </style>
+    <script>
+        function getTime(){
+            var dt=new Date();
+            var h=dt.getHours()-12;
+            var m=dt.getMinutes();
+            var s=dt.getSeconds();
+            if(h<10)
+                h="0"+h;
+            if(m<10)
+                m="0"+m;
+            if(s<10)
+                s="0"+s;
+            var msg="";
+            if(s%2==0){
+                msg=h+"<span class='i1'> : </span>"+m+"<span class='i1'> : </span>"+s;
+            }
+            else{
+                msg=h+"<span class='i1'> : </span>"+m+"<span class='i1'> : </span>"+s;
+            }
+            document.getElementById('clock').innerHTML=msg;
+            var t=setTimeout('getTime()',1000);
+        }
+
+    </script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLOCK</title>
+</head>
+<body onload="getTime()">
+    <div id="clock">
+        
+    </div>
+    <div>
+        <form action="" class="a">
+            1.What is the capital of Chattisgarh?<br>          
+                <input type="radio" name="r1">Bilaspur <br> 
+                <input type="radio" name="r1">Raipur <br>
+                <input type="radio" name="r1">Indore <br>
+                <input type="radio" name="r1">Ellora <br>
+        </form>
+    </div>
+    <div>
+        <form action="" class="a">
+            2.What is the capital of Assam?<br>          
+                <input type="radio" name="r1">Guwahati <br> 
+                <input type="radio" name="r1">Shillong <br>
+                <input type="radio" name="r1">Dispur <br>
+                <input type="radio" name="r1">Itanagar <br>
+        </form>
+    </div>
+    <div>
+        <form action="" class="a">
+            3.What is the capital of Spain?<br>          
+                <input type="radio" name="r1">Barcelona <br> 
+                <input type="radio" name="r1">Madrid <br>
+                <input type="radio" name="r1">Milan <br>
+                <input type="radio" name="r1">Budhapest <br>
+        </form>
+    </div>
+    <div>
+        <form action="" class="a">
+            3.What is the capital of Gujarat?<br>          
+                <input type="radio" name="r1">Gandhinagar <br> 
+                <input type="radio" name="r1">Ahmedabad <br>
+                <input type="radio" name="r1">Surat <br>
+                <input type="radio" name="r1">Vadodara <br>
+        </form>
+    </div>
+</body>
+</html>
